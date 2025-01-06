@@ -8,6 +8,7 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 <div id="root"></div>
@@ -22,7 +23,7 @@
     function MyApp() {
         return (
             <div>
-                <h1>Hello, world!</h1>
+                <h1 className="hello-world">Hello, world!</h1>
                 <MyButton />
             </div>
         );
