@@ -26,6 +26,7 @@
                 <HandlerButton />
                 <ButtonWithState />
                 <ButtonWithState />
+                <ParentComponent />
             </div>
         );
     }
@@ -115,6 +116,31 @@
 
         return (
             <button onClick={handleClick}>
+                Clicked {count} times
+            </button>
+        );
+    }
+
+    // コンポーネント間でデータを共有する
+    function ParentComponent() {
+        const [count, setCount] = React.useState(0);
+
+        function handleClick() {
+            setCount(count + 1);
+        }
+
+        return (
+            <div>
+                <h1>Counters that update together</h1>
+                <ChildButton count={count} onClick={handleClick} />
+                <ChildButton count={count} onClick={handleClick} />
+            </div>
+        )
+    }
+
+    function ChildButton({ count, onClick}) {
+        return (
+            <button onClick={onClick}>
                 Clicked {count} times
             </button>
         );
