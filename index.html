@@ -23,6 +23,7 @@
                 <UseData />
                 <ConditionalRender />
                 <ListRender />
+                <HandlerButton />
             </div>
         );
     }
@@ -87,6 +88,17 @@
 
         return (
             <ul>{listItems}</ul>
+        );
+    }
+
+    // イベントに応答する
+    function HandlerButton() {
+        function handleClick() {
+            alert('You clicked me!');
+        }
+
+        return (
+            <button onClick={handleClick}>Click me</button>
         );
     }
 
