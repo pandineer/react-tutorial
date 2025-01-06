@@ -24,6 +24,8 @@
                 <ConditionalRender />
                 <ListRender />
                 <HandlerButton />
+                <ButtonWithState />
+                <ButtonWithState />
             </div>
         );
     }
@@ -99,6 +101,22 @@
 
         return (
             <button onClick={handleClick}>Click me</button>
+        );
+    }
+
+    // 画面の更新
+    // import { useState } from 'react'; - ここではimportする代わりにReact.useStateとして使うのでコメントアウトしてある
+    function ButtonWithState() {
+        const [count, setCount] = React.useState(0);
+
+        function handleClick() {
+            setCount(count + 1);
+        }
+
+        return (
+            <button onClick={handleClick}>
+                Clicked {count} times
+            </button>
         );
     }
 
