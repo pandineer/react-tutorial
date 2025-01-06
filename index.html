@@ -13,8 +13,19 @@
 <div id="root"></div>
 <script type="text/babel">
 
+    function MyButton() {
+        return (
+            <button>I'm a button</button>
+        );
+    }
+
     function MyApp() {
-        return <h1>Hello, world!</h1>;
+        return (
+            <div>
+                <h1>Hello, world!</h1>
+                <MyButton />
+            </div>
+        );
     }
 
     const container = document.getElementById('root');
