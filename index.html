@@ -21,6 +21,7 @@
                 <h1 className="hello-world">Hello, world!</h1>
                 <MyButton />
                 <UseData />
+                <ConditionalRender />
             </div>
         );
     }
@@ -46,6 +47,22 @@
                 color: user.color,
             }}>{user.name + '-san'}</p>
         )
+    }
+
+    // 条件付きレンダー
+    function ConditionalRender() {
+        let content = 'this is content';
+        let message;
+        if (content == null) {
+            message = "No content";
+        } else {
+            message = content;
+        }
+        return (
+            <div>
+                <p>{message}</p>
+            </div>
+        );
     }
 
     const container = document.getElementById('root');
