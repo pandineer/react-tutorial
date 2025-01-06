@@ -21,10 +21,19 @@
     }
 
     function MyApp() {
+        const user = {
+            name: 'panda',
+            backgroundColor: 'black',
+            color: 'white',
+        };
         return (
             <div>
                 <h1 className="hello-world">Hello, world!</h1>
                 <MyButton />
+                <p style={{
+                    backgroundColor: user.backgroundColor,
+                    color: user.color,
+                }}>{user.name + '-san'}</p>
             </div>
         );
     }
